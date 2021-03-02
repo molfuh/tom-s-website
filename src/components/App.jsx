@@ -1,11 +1,13 @@
 import '../App.css';
-import HomePage from './HomePage';
+import FirstView from './FirstView';
 import coverPic from '../cover_photo.JPG';
+import Header from './Header';
 
 function App() {
   return (
     <div className="App">
-      <HomePage coverPic={coverPic}/>
+      <Header />
+      <FirstView coverPic={coverPic}/>
     </div>
   );
 }
