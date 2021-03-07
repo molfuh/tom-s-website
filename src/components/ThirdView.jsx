@@ -3,11 +3,11 @@ import styled, { keyframes, css } from 'styled-components';
 import SecondView from './SecondView.jsx';
 import VizSensor from 'react-visibility-sensor';
 
-export default function FirstView({ coverPic, firstPic }) {
+export default function ThirdView() {
     const [divVis, setDivVis] = useState(false);
     return (
         <>
-            <FirstViewDiv coverPic={coverPic}>
+            <FirstViewDiv>
                 <VizSensor
                     onChange={(isVisible) => {
                         setDivVis(isVisible);
@@ -28,22 +28,19 @@ export default function FirstView({ coverPic, firstPic }) {
                     </StyledDiv>
                 </VizSensor>
             </FirstViewDiv>
-            <SecondView firstPic={firstPic}/>
         </>
     )
 }
 
 const FirstViewDiv = styled.div`
-    background-image: url(${ ({coverPic}) => coverPic });
+    /* background-image: url(${ ({coverPic}) => coverPic }); */
     /* -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     /* filter: grayscale(100%); */
-    background-size: cover;
+    background-color: red;
     position: absolute;
-    height: 100vh;
+    top: 200vh;
+    height: 110vh;
     width: 100vw;
-    display: flex;
-    align-items:center;
-    justify-content:center;
 `;
 
 const visible = keyframes`

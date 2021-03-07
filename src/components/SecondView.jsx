@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import VizSensor from 'react-visibility-sensor';
-
+import ThirdView from './ThirdView.jsx';
 
 export default function SecondView({firstPic}) {
     const [divVis, setDivVis] = useState(false);
@@ -28,6 +28,7 @@ export default function SecondView({firstPic}) {
                     </StyledDiv>
                 </VizSensor>
             </SecondViewDiv>
+            <ThirdView />
         </>
     )
 }
@@ -39,7 +40,6 @@ const SecondViewDiv = styled.div`
     top: 100vh;
     height: 110vh;
     width: 100vw;
-    background-color: red;
 `;
 
 const visible = keyframes`
