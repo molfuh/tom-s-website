@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import SecondView from './SecondView.jsx';
-// import React, { useState } from 'react';
+import VizSensor from 'react-visibility-sensor';
 
-
-export default function FirstView({ coverPic }) {
-    const [transition, setTransition] = useState(false);
-    const handleTransition = () => {
-        setTransition(true);
-    }
+export default function FirstView({ coverPic, firstPic }) {
+    const [divVis, setDivVis] = useState(false);
     return (
         <>
             <FirstViewDiv coverPic={coverPic}>
-                {/* {transition && {handleTransition()} */}
-                <StyledDiv transition={transition}>
+                <VizSensor
+                    onChange={(isVisible) => {
+                        setDivVis(isVisible);
+                    }}>
+                    <StyledDiv divVis={divVis}>
                     Composer, Producer, Performer
                     <br />
                     THOMAS M.L. RAVAGO
@@ -26,9 +25,10 @@ export default function FirstView({ coverPic }) {
                     in collaborative work environments, and to continue learning 
                     and passing on all there is to learn as a once-and-always 
                     student of music. */}
-                </StyledDiv>
+                    </StyledDiv>
+                </VizSensor>
             </FirstViewDiv>
-            <SecondView />
+            <SecondView firstPic={firstPic}/>
         </>
     )
 }
@@ -63,5 +63,5 @@ const StyledDiv = styled.div`
     height: 80vh;
     width: 25vw;
     left: 100px;
-    animation: ${visible} 1s forwards 1s;
+    animation: ${visible} 1s forwards 0.5s;
 `;
