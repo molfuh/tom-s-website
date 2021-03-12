@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import VizSensor from 'react-visibility-sensor';
-import ThirdView from './ThirdView.jsx';
+// import ReactSnapScroll from 'react-snap-scroll';
 
 export default function SecondView({firstPic}) {
     const [divVis, setDivVis] = useState(false);
@@ -28,7 +28,6 @@ export default function SecondView({firstPic}) {
                     </StyledDiv>
                 </VizSensor>
             </SecondViewDiv>
-            <ThirdView />
         </>
     )
 }
@@ -36,10 +35,11 @@ export default function SecondView({firstPic}) {
 const SecondViewDiv = styled.div`
     background-image: url(${ ({firstPic}) => firstPic });
     background-size: cover;
-    position: absolute;
-    top: 100vh;
-    height: 110vh;
+    /* position: absolute; */
+    /* top: 100vh; */
+    height: 100vh;
     width: 100vw;
+    scroll-snap-align: start;
 `;
 
 const visible = keyframes`
@@ -49,7 +49,7 @@ const visible = keyframes`
 
 const StyledDiv = styled.div`
     opacity: 0;
-    position: absolute;
+    /* position: absolute; */
     color: white;
     padding: 20px;
     display: flex;
@@ -58,7 +58,7 @@ const StyledDiv = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
     height: 80vh;
     width: 25vw;
-    right: 100px;
-    top: 100px;
+    /* right: 100px; */
+    /* top: 100px; */
     animation: ${props => props.divVis ? css`${visible} 1s forwards 0.5s` : '' };
 `;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import SecondView from './SecondView.jsx';
 import VizSensor from 'react-visibility-sensor';
 
 export default function FirstView({ coverPic, firstPic }) {
@@ -28,7 +27,6 @@ export default function FirstView({ coverPic, firstPic }) {
                     </StyledDiv>
                 </VizSensor>
             </FirstViewDiv>
-            <SecondView firstPic={firstPic}/>
         </>
     )
 }
@@ -38,12 +36,14 @@ const FirstViewDiv = styled.div`
     /* -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     /* filter: grayscale(100%); */
     background-size: cover;
-    position: absolute;
+    /* position: absolute; */
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items:center;
-    justify-content:center;
+    /* display: flex; */
+    /* align-items:center; */
+    /* justify-content:center; */
+    scroll-snap-align: start;
+    /* padding-top: 9vh; */
 `;
 
 const visible = keyframes`
@@ -53,7 +53,7 @@ const visible = keyframes`
 
 const StyledDiv = styled.div`
     opacity: 0;
-    position: absolute;
+    /* position: absolute; */
     color: white;
     padding: 20px;
     display: flex;
@@ -62,7 +62,7 @@ const StyledDiv = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
     height: 80vh;
     width: 25vw;
-    left: 100px;
+    /* left: 100px; */
     animation: ${props => props.divVis ? css`${visible} 1s forwards 0.5s` : '' };
     /* animation: ${visible} 1s forwards 0.5s; */
 `;

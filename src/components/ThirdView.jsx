@@ -37,10 +37,11 @@ const FirstViewDiv = styled.div`
     /* -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     /* filter: grayscale(100%); */
     background-color: red;
-    position: absolute;
-    top: 200vh;
-    height: 110vh;
+    /* position: absolute; */
+    /* top: 200vh; */
+    height: 100vh;
     width: 100vw;
+    scroll-snap-align: start;
 `;
 
 const visible = keyframes`
@@ -50,7 +51,7 @@ const visible = keyframes`
 
 const StyledDiv = styled.div`
     opacity: 0;
-    position: absolute;
+    /* position: absolute;]]]] */
     color: white;
     padding: 20px;
     display: flex;

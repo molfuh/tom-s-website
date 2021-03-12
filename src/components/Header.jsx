@@ -18,7 +18,7 @@ export default function Header () {
 const Container = styled.div`
     background-color: red;
     height: 5vh;
-    position: absolute;
+    /* position: absolute; */
 `;
 
 const Logo = styled.span`
