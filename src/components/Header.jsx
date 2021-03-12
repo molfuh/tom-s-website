@@ -16,7 +16,7 @@ export default function Header () {
 }
 
 const Container = styled.div`
-    background-color: red;
+    background-color: transparent;
     height: 5vh;
     /* position: absolute; */
 `;
@@ -34,7 +34,8 @@ const LinksContainer = styled.span`
     grid-template-columns: repeat(4, 1fr);
 `;
 
-const Home = styled.span`
+//TODO - button styling, routing
+const Home = styled.button`
     position: absolute;
     grid-column-start: 1;
 `;

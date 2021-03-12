@@ -60,5 +60,6 @@ const StyledDiv = styled.div`
     width: 25vw;
     /* right: 100px; */
     /* top: 100px; */
-    animation: ${props => props.divVis ? css`${visible} 1s forwards 0.5s` : '' };
+    animation: ${props => props.divVis ? css`${visible} 1s forwards 0.3s` : '' };
+    float: right;
 `;
