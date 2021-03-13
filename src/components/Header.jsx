@@ -18,6 +18,8 @@ export default function Header () {
 const Container = styled.div`
     background-color: transparent;
     height: 5vh;
+    display: flex;
+    align-items: center;
     /* position: absolute; */
 `;
 
@@ -34,10 +36,16 @@ const LinksContainer = styled.span`
     grid-template-columns: repeat(4, 1fr);
 `;
 
-//TODO - button styling, routing
 const Home = styled.button`
-    position: absolute;
     grid-column-start: 1;
+    background-color: transparent;
+    border-radius: 10px;
+    outline: none;
+    margin: 10px;
+    border: none;
+    &:hover {
+        background-color: orange;
+    }
 `;
 
 const About = styled(Home)`

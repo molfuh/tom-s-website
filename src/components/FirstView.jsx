@@ -43,7 +43,8 @@ const FirstViewDiv = styled.div`
     /* align-items:center; */
     /* justify-content:center; */
     scroll-snap-align: start;
-    /* padding-top: 9vh; */
+    display: flex;
+    align-items: center;
 `;
 
 const visible = keyframes`
@@ -62,7 +63,8 @@ const StyledDiv = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
     height: 80vh;
     width: 25vw;
-    /* left: 100px; */
+    margin-left: 100px;
+    top: 10px;
     animation: ${props => props.divVis ? css`${visible} 1s forwards 0.3s` : '' };
     /* animation: ${visible} 1s forwards 0.5s; */
 `;
