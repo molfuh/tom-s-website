@@ -64,7 +64,7 @@ const StyledDiv = styled.div`
     height: 80vh;
     width: 25vw;
     left: 100px;
-    animation: ${props => props.divVis ? css`${visible} 1s forwards 0.3s` : '' };
+    animation: ${props => props.divVis ? css`${visible} 1s forwards` : '' };
     /* animation: ${visible} 1s forwards 0.5s; */
     margin-left: 100px;
 `;

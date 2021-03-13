@@ -16,22 +16,28 @@ export default function Header () {
 }
 
 const Container = styled.div`
-    background-color: transparent;
+    position: fixed;
+    /* background-color: transparent; */
     height: 5vh;
     display: flex;
     align-items: center;
-    /* position: absolute; */
+    background-color: white;
+    z-index: 1;
+    width: 100vw;
 `;
 
 const Logo = styled.span`
-    position: absolute;
+    /* position: absolute; */
+    left: 20px;
 `;
 
 const LinksContainer = styled.span`
-    position: absolute;
+    /* position: relative; */
+    float: right;
+    /* display: flex; */
     display: grid;
+    /* justify-content: flex-end; */
     width: 30vw;
-    right: 0;
     grid-template-columns: repeat(4, 1fr);
 `;
 

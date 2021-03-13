@@ -63,6 +63,6 @@ const StyledDiv = styled.div`
     /* right: 100px; */
     /* top: 100px; */
     margin-right: 100px;
-    animation: ${props => props.divVis ? css`${visible} 1s forwards 0.3s` : '' };
+    animation: ${props => props.divVis ? css`${visible} 1s forwards` : '' };
     float: right;
 `;
