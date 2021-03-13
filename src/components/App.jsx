@@ -13,8 +13,8 @@ function App() {
       <Header />
       <ScrollContainer>
         <FirstView coverPic={coverPic} firstPic={firstPic}/>
-        <SecondView firstPic={firstPic}/>
-        <ThirdView />
+        <SecondView />
+        <ThirdView firstPic={firstPic}/>
       </ScrollContainer>
     </div>
   );

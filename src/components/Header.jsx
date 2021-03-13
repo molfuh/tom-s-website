@@ -25,7 +25,6 @@ const Container = styled.div`
 
 const Logo = styled.span`
     position: absolute;
-    left: 0;
 `;
 
 const LinksContainer = styled.span`

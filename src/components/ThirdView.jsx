@@ -3,11 +3,11 @@ import styled, { keyframes, css } from 'styled-components';
 import SecondView from './SecondView.jsx';
 import VizSensor from 'react-visibility-sensor';
 
-export default function ThirdView() {
+export default function ThirdView({firstPic}) {
     const [divVis, setDivVis] = useState(false);
     return (
         <>
-            <FirstViewDiv>
+            <ThirdViewDev firstPic={firstPic}>
                 <VizSensor
                     onChange={(isVisible) => {
                         setDivVis(isVisible);
@@ -27,21 +27,24 @@ export default function ThirdView() {
                     student of music. */}
                     </StyledDiv>
                 </VizSensor>
-            </FirstViewDiv>
+            </ThirdViewDev>
         </>
     )
 }
 
-const FirstViewDiv = styled.div`
+const ThirdViewDev = styled.div`
+    background-image: url(${ ({firstPic}) => firstPic });
+    background-size: cover;
     /* background-image: url(${ ({coverPic}) => coverPic }); */
     /* -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     /* filter: grayscale(100%); */
-    background-color: red;
     /* position: absolute; */
     /* top: 200vh; */
     height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
+    display: flex;
+    align-items: center;
 `;
 
 const visible = keyframes`
@@ -63,4 +66,5 @@ const StyledDiv = styled.div`
     left: 100px;
     animation: ${props => props.divVis ? css`${visible} 1s forwards 0.3s` : '' };
     /* animation: ${visible} 1s forwards 0.5s; */
+    margin-left: 100px;
 `;
