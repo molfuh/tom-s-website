@@ -14,13 +14,13 @@ export default function ThirdView({firstPic}) {
                         setDivVis(isVisible);
                     }}>
                     <StyledDiv divVis={divVis}>
-                    <p>
-                      <div className="contact">CONTACT INFORMATION</div>
-                      thomas.ravago.music@gmail.com
-                      <a href="linkedin.com/in/thomasravago/">
-                      linkedin.com/in/thomasravago/
-                      </a>
-                    </p>
+                        <p>
+                            <div className="contact">CONTACT INFORMATION</div>
+                            thomas.ravago.music@gmail.com
+                            <a href="linkedin.com/in/thomasravago/">
+                            linkedin.com/in/thomasravago/
+                            </a>
+                        </p>
                     {/* Passionate and self-motivated musician,
                     teacher, composer, producer, and performer,
                     with a philosophy that has a huge emphasis on the power
@@ -47,7 +47,9 @@ const ThirdViewDev = styled.div`
     /* top: 200vh; */
     height: 100vh;
     width: 100vw;
-    scroll-snap-align: start;
+    /* scroll-snap-align: end; */
+    scroll-snap-align: center;
+    /* scroll-snap-stop: always; */
     display: flex;
     align-items: center;
 `;
@@ -69,7 +71,7 @@ const StyledDiv = styled.div`
     align-items:center;
     justify-content:center;
     background-color: rgba(0, 0, 0, 0.8);
-    height: 80vh;
+    height: 60vh;
     width: 25vw;
     left: 100px;
     margin-top: 50px;
@@ -90,4 +92,3 @@ const StyledDiv = styled.div`
         }
     }
 `;
-

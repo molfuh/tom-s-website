@@ -4,11 +4,13 @@ import coverPic from '../cover_photo.JPG';
 import firstPic from '../first_photo.JPG';
 import facePic from '../thomas_smiling_pic.jpeg';
 import eric_genaff from '../eric_genaff.png';
-import thomasHeadshot from '../thomasHeadshot.jpeg';
+// import thomas_headshot from '../thomas_headshot.jpeg';
+import tom_s_logo from '../tom-s-logo.jpeg';
 import Header from './Header';
 import styled from 'styled-components';
 import SecondView from './SecondView';
 import ThirdView from './ThirdView';
+import Footer from './Footer';
 import About from './About';
 import Videos from './Videos';
 import Listen from './Listen';
@@ -67,10 +69,11 @@ function App() {
             </Route>
             <Route path="/">
               <ScrollContainer>
-                  <FirstView coverPic={coverPic} firstPic={firstPic}/>
-                  {/* <SecondView thomasHeadshot={thomasHeadshot}/> */}
-                  <SecondView />
+                  <FirstView coverPic={coverPic}/>
+                  <SecondView tom_s_logo={tom_s_logo}/>
+                  {/* <SecondView thomas_headshot={thomas_headshot}/> */}
                   <ThirdView firstPic={firstPic}/>
+                  <Footer />
               </ScrollContainer>
             </Route>
           </Switch>
@@ -135,5 +138,6 @@ const StyledUl = styled.ul`
   /* height: 30px; */
   /* top: 15px; */
 `;
+
 
 export default App;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TextFocus } from 'react-text-effects';
+import Footer from './Footer';
 
 export default function Videos({ eric_genaff }) {
   return (
@@ -8,7 +9,7 @@ export default function Videos({ eric_genaff }) {
     <Container>
         <StyledImage src={eric_genaff}/>
         <Styledh1>
-          <TextFocus type='in' duration='2s'>
+          <TextFocus type='in' duration='1s'>
             Videos
           </TextFocus>
         </Styledh1>
@@ -16,6 +17,7 @@ export default function Videos({ eric_genaff }) {
           Storybook Symphony: The Concert
         </h2>
         </Container>
+        <Footer />
     </>
   )
 }
