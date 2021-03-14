@@ -1,0 +1,13 @@
+// const visible = keyframes`
+//   from {opacity: 0;}
+//   to {opacity: 1;}
+// `;
+
+@keyframes visible {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}

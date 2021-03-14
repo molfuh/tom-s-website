@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import VizSensor from 'react-visibility-sensor';
+import "../styles/app.scss";
 
 export default function FirstView({ coverPic, firstPic }) {
     const [divVis, setDivVis] = useState(false);
@@ -63,6 +64,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items:center;
   justify-content:center;
+  line-height: 5vh;
   background-color: rgba(0, 0, 0, 0.8);
   height: 80vh;
   width: 25vw;

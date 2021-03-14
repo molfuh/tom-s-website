@@ -4,6 +4,7 @@ import coverPic from '../cover_photo.JPG';
 import firstPic from '../first_photo.JPG';
 import facePic from '../thomas_smiling_pic.jpeg';
 import eric_genaff from '../eric_genaff.png';
+import thomasHeadshot from '../thomasHeadshot.jpeg';
 import Header from './Header';
 import styled from 'styled-components';
 import SecondView from './SecondView';
@@ -17,6 +18,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
+// import "../styles/app.scss";
+
+const styling = {
+  color:'black',
+  textDecoration:"none"
+};
 
 function App() {
   return (
@@ -27,16 +34,24 @@ function App() {
           <StyledLogo>THOMAS M.L. RAVAGO</StyledLogo>
             <StyledUl>
               <StyledLi>
-                <Link to="/">Home</Link>
+              <Link to="/listen"
+                  style={styling}
+                >Take a Listen</Link>
               </StyledLi>
               <StyledLi>
-                <Link to="/about">About</Link>
+              <Link to="/videos"
+                  style={styling}
+                >Videos</Link>
               </StyledLi>
               <StyledLi>
-                <Link to="/videos">Videos</Link>
+              <Link to="/about"
+                  style={styling}
+                >About</Link>
               </StyledLi>
               <StyledLi>
-                <Link to="/listen">Take a Listen</Link>
+              <Link to="/"
+                style={styling}
+                >Home</Link>
               </StyledLi>
             </StyledUl>
           </StyledNav>
@@ -53,6 +68,7 @@ function App() {
             <Route path="/">
               <ScrollContainer>
                   <FirstView coverPic={coverPic} firstPic={firstPic}/>
+                  {/* <SecondView thomasHeadshot={thomasHeadshot}/> */}
                   <SecondView />
                   <ThirdView firstPic={firstPic}/>
               </ScrollContainer>
@@ -78,6 +94,9 @@ const StyledNav = styled.nav`
   /* margin-bottom: 10px; */
   /* display: flex; */
   /* align-content: center; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 const StyledLogo = styled.span`
@@ -86,7 +105,8 @@ const StyledLogo = styled.span`
   color: black;
   display: flex;
   align-items: center;
-  top: 5px;
+  /* top: 5px; */
+  /* top: 50%; */
   left: 5px;
   font-size: 1.5rem;
 `;
@@ -106,13 +126,13 @@ const StyledLi = styled.li`
 `;
 
 const StyledUl = styled.ul`
-  margin-top: 0;
+  /* margin-top: 0; */
   /* text-decoration: none; */
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
-  /* align-items: center; */
-  margin: 0;
-  height: 30px;
+  align-items: center; */
+  /* margin: 0; */
+  /* height: 30px; */
   /* top: 15px; */
 `;
 

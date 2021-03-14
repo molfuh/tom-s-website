@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import VizSensor from 'react-visibility-sensor';
 // import ReactSnapScroll from 'react-snap-scroll';
+import "../styles/app.scss";
 
+// export default function SecondView({ thomasHeadshot }) {
 export default function SecondView() {
     const [divVis, setDivVis] = useState(false);
     return (
@@ -12,9 +14,10 @@ export default function SecondView() {
                     onChange={(isVisible) => {
                         setDivVis(isVisible);
                     }}>
+                    {/* <StyledImage src={thomasHeadshot} /> */}
                     <StyledDiv divVis={divVis} >
                         {/* <p>Summary</p> */}
-                      <p>SUMMARY <br /> Passionate and self-motivated musician, teacher, composer, producer, and performer, with a philosophy that has a huge emphasis on the power and importance of collaboration. Diligent and hard-working individual that strives to bring audiences a well-rounded musical experience, to promote positivity and camaraderie in collaborative work environments, and to continue learning and passing on all there is to learn as a once-and-always student of music.</p>
+                      <p><span className="summary">SUMMARY</span> <br /> Passionate and self-motivated musician, teacher, composer, producer, and performer, with a philosophy that has a huge emphasis on the power and importance of collaboration. Diligent and hard-working individual that strives to bring audiences a well-rounded musical experience, to promote positivity and camaraderie in collaborative work environments, and to continue learning and passing on all there is to learn as a once-and-always student of music.</p>
                     {/* Passionate and self-motivated musician,
                     teacher, composer, producer, and performer,
                     with a philosophy that has a huge emphasis on the power
@@ -43,6 +46,10 @@ const SecondViewDiv = styled.div`
     justify-content: flex-end;
 `;
 
+const StyledImage = styled.img`
+
+`;
+
 const visible = keyframes`
   from {opacity: 0;}
   to {opacity: 1;}
@@ -60,6 +67,7 @@ const StyledDiv = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
     height: 80vh;
     width: 25vw;
+    font-size: 1.1rem;
     margin-top: 50px;
     /* right: 100px; */
     /* top: 100px; */
@@ -72,5 +80,8 @@ const StyledDiv = styled.div`
         /* margin-top: 50%; */
         position: relative;
         overflow-x: scroll;
+        .summary {
+            font-size: 1.5rem;
+        }
     }
 `;

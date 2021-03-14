@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import SecondView from './SecondView.jsx';
 import VizSensor from 'react-visibility-sensor';
+import "../styles/app.scss";
 
 export default function ThirdView({firstPic}) {
     const [divVis, setDivVis] = useState(false);
@@ -13,11 +14,13 @@ export default function ThirdView({firstPic}) {
                         setDivVis(isVisible);
                     }}>
                     <StyledDiv divVis={divVis}>
-                    CONTACT INFORMATION
-                    <br />
-                    thomas.ravago.music@gmail.com
-                    <br />
-                    linkedin.com/in/thomas-ravago
+                    <p>
+                      <div className="contact">CONTACT INFORMATION</div>
+                      thomas.ravago.music@gmail.com
+                      <a href="linkedin.com/in/thomasravago/">
+                      linkedin.com/in/thomasravago/
+                      </a>
+                    </p>
                     {/* Passionate and self-motivated musician,
                     teacher, composer, producer, and performer,
                     with a philosophy that has a huge emphasis on the power
@@ -56,10 +59,12 @@ const visible = keyframes`
 
 const StyledDiv = styled.div`
     opacity: 0;
-    /* position: absolute;]]]] */
+    /* position: relative; */
     text-align: center;
     color: white;
     padding: 20px;
+    font-size: 1.4rem;
+    line-height: 5vh;
     display: flex;
     align-items:center;
     justify-content:center;
@@ -71,4 +76,18 @@ const StyledDiv = styled.div`
     animation: ${props => props.divVis ? css`${visible} 1s forwards` : '' };
     /* animation: ${visible} 1s forwards 0.5s; */
     margin-left: 100px;
+    p {
+        font-size: 1.3rem;
+        /* position: relative; */
+        .contact {
+            font-size: 1.5rem;
+            margin-bottom: 3vh;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+        }
+    }
 `;
+
