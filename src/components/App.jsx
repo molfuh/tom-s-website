@@ -24,7 +24,7 @@ import {
 
 const styling = {
   color:'black',
-  textDecoration:"none"
+  textDecoration:"none",
 };
 
 function App() {

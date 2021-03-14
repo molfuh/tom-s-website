@@ -74,7 +74,7 @@ const StyledDiv = styled.div`
     height: 80vh;
     width: 25vw;
     font-size: 1.1rem;
-    margin-top: 50px;
+    margin-top: 80px;
     /* right: 100px; */
     /* top: 100px; */
     margin-right: 100px;

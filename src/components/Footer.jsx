@@ -37,7 +37,7 @@ const Container = styled.div`
       :hover {
         cursor: pointer;
         background-color: transparent;
-        border-color: yellow;
+        border-color: rgb(255, 255, 0, 0.5);
       }
     }
     #linkedin-icon {
