@@ -21,22 +21,23 @@ function App() {
     <Router>
       <div className="App">
         {/* <Header /> */}
-        <nav>
-            <ul>
-              <li>
+        <StyledNav>
+          <StyledLogo>THOMAS M.L. RAVAGO</StyledLogo>
+            <StyledUl>
+              <StyledLi>
                 <Link to="/">Home</Link>
-              </li>
-              <li>
+              </StyledLi>
+              <StyledLi>
                 <Link to="/about">About</Link>
-              </li>
-              <li>
+              </StyledLi>
+              <StyledLi>
                 <Link to="/videos">Videos</Link>
-              </li>
-              <li>
+              </StyledLi>
+              <StyledLi>
                 <Link to="/listen">Take a Listen</Link>
-              </li>
-            </ul>
-          </nav>
+              </StyledLi>
+            </StyledUl>
+          </StyledNav>
           <Switch>
             <Route path="/about">
               <About />
@@ -63,7 +64,50 @@ function App() {
 const ScrollContainer = styled.div`
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-  height: 100vh;
+`;
+
+const StyledNav = styled.nav`
+  width: 100vw;
+  z-index: 1;
+  position: fixed;
+  background-color: white;
+  /* display: flex; */
+  /* align-content: center; */
+`;
+
+const StyledLogo = styled.span`
+  position: absolute;
+  /* left: 20px; */
+  color: black;
+  display: flex;
+  align-items: center;
+  top: 5px;
+  left: 5px;
+`;
+
+const StyledLi = styled.li`
+  font-size: 1.2vw;
+  /* height: 35px; */
+  display: inline;
+  margin: 0;
+  float: right;
+  /* display: flex;
+  align-items: center; */
+  margin: 0 1vw;
+  top: 5px;
+  margin: 0.5vw 1vw;
+  /* align-content: space-around; */
+`;
+
+const StyledUl = styled.ul`
+  margin-top: 0;
+  /* text-decoration: none; */
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  margin: 0;
+  height: 30px;
+  /* top: 15px; */
 `;
 
 export default App;
