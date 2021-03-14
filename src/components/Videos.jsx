@@ -1,7 +1,42 @@
 import React from 'react';
+import styled from 'styled-components';
+import { TextFocus } from 'react-text-effects';
 
-export default function Videos() {
+export default function Videos({ eric_genaff }) {
   return (
-    <h1>In Videos!</h1>
+    <>
+    <Container>
+        <StyledImage src={eric_genaff}/>
+        <Styledh1>
+          <TextFocus type='in' duration='2s'>
+            Videos
+          </TextFocus>
+        </Styledh1>
+        <h2>
+          Storybook Symphony: The Concert
+        </h2>
+        </Container>
+    </>
   )
 }
+
+const Container = styled.div`
+  position: relative;
+  /* text-align: center; */
+`;
+
+const StyledImage = styled.img`
+  /* position: absolute; */
+  display: block;
+  width: 55%;
+  margin: 0 auto;
+`;
+
+const Styledh1 = styled.h1`
+
+  position: absolute;
+  color: white;
+  font-size: 6em;
+  top: 15vw;
+  left: 25vw;
+`;

@@ -2,6 +2,8 @@
 import FirstView from './FirstView';
 import coverPic from '../cover_photo.JPG';
 import firstPic from '../first_photo.JPG';
+import facePic from '../thomas_smiling_pic.jpeg';
+import eric_genaff from '../eric_genaff.png';
 import Header from './Header';
 import styled from 'styled-components';
 import SecondView from './SecondView';
@@ -40,10 +42,10 @@ function App() {
           </StyledNav>
           <Switch>
             <Route path="/about">
-              <About />
+              <About facePic={facePic}/>
             </Route>
             <Route path="/videos">
-              <Videos />
+              <Videos eric_genaff={eric_genaff}/>
             </Route>
             <Route path="/listen">
               <Listen />
@@ -64,6 +66,7 @@ function App() {
 const ScrollContainer = styled.div`
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  height: 100vh;
 `;
 
 const StyledNav = styled.nav`
@@ -71,6 +74,7 @@ const StyledNav = styled.nav`
   z-index: 1;
   position: fixed;
   background-color: white;
+  /* margin-bottom: 10px; */
   /* display: flex; */
   /* align-content: center; */
 `;
