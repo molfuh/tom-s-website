@@ -13,7 +13,8 @@ export default function SecondView() {
                         setDivVis(isVisible);
                     }}>
                     <StyledDiv divVis={divVis} >
-                      <p>Passionate and self-motivated musician, teacher, composer, producer, and performer, with a philosophy that has a huge emphasis on the power and importance of collaboration. Diligent and hard-working individual that strives to bring audiences a well-rounded musical experience, to promote positivity and camaraderie in collaborative work environments, and to continue learning and passing on all there is to learn as a once-and-always student of music.</p>
+                        {/* <p>Summary</p> */}
+                      <p>SUMMARY <br /> Passionate and self-motivated musician, teacher, composer, producer, and performer, with a philosophy that has a huge emphasis on the power and importance of collaboration. Diligent and hard-working individual that strives to bring audiences a well-rounded musical experience, to promote positivity and camaraderie in collaborative work environments, and to continue learning and passing on all there is to learn as a once-and-always student of music.</p>
                     {/* Passionate and self-motivated musician,
                     teacher, composer, producer, and performer,
                     with a philosophy that has a huge emphasis on the power
@@ -59,6 +60,7 @@ const StyledDiv = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
     height: 80vh;
     width: 25vw;
+    margin-top: 50px;
     /* right: 100px; */
     /* top: 100px; */
     margin-right: 100px;
@@ -67,7 +69,7 @@ const StyledDiv = styled.div`
     p {
         height: 75vh;
         line-height: 3vw;
-        margin-top: 50%;
+        /* margin-top: 50%; */
         position: relative;
         overflow-x: scroll;
     }

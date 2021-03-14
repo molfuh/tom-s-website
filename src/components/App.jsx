@@ -74,6 +74,7 @@ const StyledNav = styled.nav`
   z-index: 1;
   position: fixed;
   background-color: white;
+  height: 2.7rem;
   /* margin-bottom: 10px; */
   /* display: flex; */
   /* align-content: center; */
@@ -87,6 +88,7 @@ const StyledLogo = styled.span`
   align-items: center;
   top: 5px;
   left: 5px;
+  font-size: 1.5rem;
 `;
 
 const StyledLi = styled.li`

@@ -13,9 +13,11 @@ export default function ThirdView({firstPic}) {
                         setDivVis(isVisible);
                     }}>
                     <StyledDiv divVis={divVis}>
-                    Composer, Producer, Performer
+                    CONTACT INFORMATION
                     <br />
-                    THOMAS M.L. RAVAGO
+                    thomas.ravago.music@gmail.com
+                    <br />
+                    linkedin.com/in/thomas-ravago
                     {/* Passionate and self-motivated musician,
                     teacher, composer, producer, and performer,
                     with a philosophy that has a huge emphasis on the power
@@ -65,6 +67,7 @@ const StyledDiv = styled.div`
     height: 80vh;
     width: 25vw;
     left: 100px;
+    margin-top: 50px;
     animation: ${props => props.divVis ? css`${visible} 1s forwards` : '' };
     /* animation: ${visible} 1s forwards 0.5s; */
     margin-left: 100px;

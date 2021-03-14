@@ -45,6 +45,7 @@ const FirstViewDiv = styled.div`
     scroll-snap-align: start;
     display: flex;
     align-items: center;
+    /* top: 30px; */
 `;
 
 const visible = keyframes`
@@ -55,6 +56,7 @@ const visible = keyframes`
 const StyledDiv = styled.div`
   opacity: 0;
   /* position: absolute; */
+  font-size: 1.4rem;
   text-align: center;
   color: white;
   padding: 20px;
@@ -65,7 +67,7 @@ const StyledDiv = styled.div`
   height: 80vh;
   width: 25vw;
   margin-left: 100px;
-  top: 10px;
+  margin-top: 50px;
   animation: ${props => props.divVis ? css`${visible} 1s forwards` : '' };
   /* animation: ${visible} 1s forwards 0.5s; */
 `;
