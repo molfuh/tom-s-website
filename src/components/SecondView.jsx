@@ -35,7 +35,7 @@ export default function SecondView({ tom_s_logo }) {
 }
 
 const SecondViewDiv = styled.div`
-    /* position: absolute; */
+    /* position: relative; */
     /* background-color: #9da39f; */
     background-color: black;
     /* top: 100vh; */

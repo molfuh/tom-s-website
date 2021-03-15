@@ -13,7 +13,7 @@ export default function About({ facePic }) {
             About
           </TextFocus>
         </Styledh1>
-<section>
+        <section>
         <h2>
           Once a student of music, always a student of music.
         </h2>
@@ -57,6 +57,7 @@ Thomas is currently working with platinum-certified 3013 Music Group as a music 
 
 const Container = styled.div`
   position: relative;
+  padding-top: 50px;
   /* text-align: center; */
   h2 {
     /* margin-bottom: 5%; */

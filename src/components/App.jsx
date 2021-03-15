@@ -5,7 +5,7 @@ import firstPic from '../first_photo.JPG';
 import facePic from '../thomas_smiling_pic.jpeg';
 import eric_genaff from '../eric_genaff.png';
 // import thomas_headshot from '../thomas_headshot.jpeg';
-import tom_s_logo from '../tom-s-logo.jpeg';
+import tom_s_logo from '../tom-s-logo.jpg';
 import Header from './Header';
 import styled from 'styled-components';
 import SecondView from './SecondView';
@@ -27,6 +27,10 @@ const styling = {
   textDecoration:"none",
 };
 
+const listenStyling = {
+  color: 'red'
+}
+
 function App() {
   return (
     <Router>
@@ -37,7 +41,7 @@ function App() {
             <StyledUl>
               <StyledLi>
               <Link to="/listen"
-                  style={styling}
+                style={styling}
                 >Take a Listen</Link>
               </StyledLi>
               <StyledLi>
@@ -100,6 +104,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  filter: drop-shadow(0 0 0.5rem grey);
 `;
 
 const StyledLogo = styled.span`
@@ -126,6 +131,9 @@ const StyledLi = styled.li`
   top: 5px;
   margin: 0.5vw 1vw;
   /* align-content: space-around; */
+  .listenClass {
+    color: red;
+  }
 `;
 
 const StyledUl = styled.ul`

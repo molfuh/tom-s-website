@@ -30,8 +30,9 @@ export default function Videos({ eric_genaff }) {
 }
 
 const Container = styled.div`
-  position: relative;
+  /* position: relative; */
   /* text-align: center; */
+  padding-top: 50px;
 `;
 
 const StyledImage = styled.img`
@@ -45,7 +46,7 @@ const Styledh1 = styled.h1`
   position: absolute;
   color: white;
   font-size: 6em;
-  top: 15vw;
+  top: 20vw;
   left: 25vw;
 `;
 
