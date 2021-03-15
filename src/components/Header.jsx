@@ -28,9 +28,7 @@ export default function Header () {
 }
 
 const Container = styled.div`
-    position: fixed;
     /* background-color: transparent; */
-    height: 5vh;
     /* vertical-align: middle; */
     /* display: flex;
     align-items: center; */
@@ -46,7 +44,6 @@ const Logo = styled.span`
 
 const LinksContainer = styled.span`
     /* position: relative; */
-    float: right;
     /* display: flex; */
     display: grid;
     /* justify-content: flex-end; */
@@ -62,7 +59,9 @@ const LinksContainer = styled.span`
 
     }
     .listen {
-
+      /* :hover {
+          color: red;
+      } */
     }
 `;
 

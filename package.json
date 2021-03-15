@@ -12,6 +12,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-snap-scroll": "0.0.5",
+    "react-text-effects": "^1.0.0",
+    "react-tilt": "^0.1.4",
     "react-visibility-sensor": "^5.1.1",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.1.0"
@@ -39,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axe-core": "^4.1.3"
   }
 }

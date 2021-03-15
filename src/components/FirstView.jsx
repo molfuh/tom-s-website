@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import VizSensor from 'react-visibility-sensor';
+import "../styles/app.scss";
 
-export default function FirstView({ coverPic, firstPic }) {
+export default function FirstView({ coverPic }) {
     const [divVis, setDivVis] = useState(false);
     return (
         <>
@@ -42,9 +43,13 @@ const FirstViewDiv = styled.div`
     /* display: flex; */
     /* align-items:center; */
     /* justify-content:center; */
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
+    /* scroll-snap-align: end; */
+    scroll-snap-align: center;
+    /* scroll-snap-stop: always; */
     display: flex;
     align-items: center;
+    /* top: 30px; */
 `;
 
 const visible = keyframes`
@@ -55,17 +60,20 @@ const visible = keyframes`
 const StyledDiv = styled.div`
   opacity: 0;
   /* position: absolute; */
+  font-size: 1.4rem;
   text-align: center;
   color: white;
   padding: 20px;
   display: flex;
   align-items:center;
   justify-content:center;
+  line-height: 5vh;
   background-color: rgba(0, 0, 0, 0.8);
+  /* height: 80vh; */
   height: 80vh;
   width: 25vw;
   margin-left: 100px;
-  top: 10px;
+  margin-top: 50px;
   animation: ${props => props.divVis ? css`${visible} 1s forwards` : '' };
   /* animation: ${visible} 1s forwards 0.5s; */
 `;
