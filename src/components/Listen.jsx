@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
+import ReactAudioPlayer from 'react-audio-player';
 
 export default function Listen() {
   const [button1, clickButton1] = useState(false)
@@ -17,20 +18,43 @@ export default function Listen() {
           <StyledLeft>
             <Tilt className="Tilt" options={{ max : 25 }} >
               <>
-              <button onClick={() => { clickButton1(!button1) }}>Music Composition</button>
+              <button onClick={() => {
+                clickButton1(!button1)
+                if (button2) clickButton2(!button2)
+              }}>
+                <span>Music Composition</span>
+                </button>
               </>
             </Tilt>
           </StyledLeft>
           <StyledRight>
           <Tilt className="Tilt" options={{ max : 25 }} >
-              <button onClick={() => { clickButton2(!button2) }}>Music Production</button>
+              <button onClick={() => {
+                clickButton2(!button2);
+                if (button1) clickButton1(!button1)
+                }}>
+                  <span>Music Production</span>
+                  </button>
             </Tilt>
           </StyledRight>
         </div>
       </Container>
-      <Composition button1={button1}>Composition Works:
-      <div>Recording 1</div></Composition>
-      <Production button2={button2}>Production Works:</Production>
+      <Composition button1={button1}>
+        <div>Composition Works:</div>
+        <StyledAudio controls="controls" src="media/birds.mp3">
+          Your browser does not support the HTML5 Audio element.
+        </StyledAudio>
+        {/* <ReactAudioPlayer
+          src="my_audio_file.ogg"
+          autoPlay
+          controls
+        > */}
+          {/* Your browser does not support the HTML5 Audio element. */}
+      {/* </ReactAudioPlayer> */}
+      </Composition>
+      <Production button2={button2}>
+        <div>Production Works:</div>
+      </Production>
     </>
   )
 }
@@ -51,16 +75,20 @@ const Container = styled.div`
 
 const StyledLeft = styled.div`
   grid-column-start: 1;
-  margin: 10vw;
+  margin: 5vw;
   button {
+    /* position: absolute; */
     border-radius: 10px;
     background-color: red;
     padding: 20px;
     height: 20vw;
     width: 20vw;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2vw;
     border-color: transparent;
+    text-align: center;
+    span {
+    }
   }
 `;
 
@@ -83,8 +111,15 @@ const Composition = styled.div`
   font-size: 2rem;
 `;
 
+const StyledAudio = styled.audio`
+  /* &::-webkit-media-controls-enclosure {
+    border-radius: 0;
+    background-color: grey;
+  } */
+  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+`;
+
 const Production = styled(Composition)`
-  opacity: ${ props => props.button2 ? 1 : 0 };
   /* visibility: ${ props => props.button2 ? 'visible' : 'hidden' }; */
   /* transition: opacity 1s; */
 `;
