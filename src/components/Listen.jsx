@@ -32,9 +32,9 @@ export default function Listen() {
               <button onClick={() => {
                 clickButton2(!button2);
                 if (button1) clickButton1(!button1)
-                }}>
-                  <span>Music Production</span>
-                  </button>
+              }}>
+                <span>Music Production</span>
+                </button>
             </Tilt>
           </StyledRight>
         </div>
@@ -54,6 +54,9 @@ export default function Listen() {
       </Composition>
       <Production button2={button2}>
         <div>Production Works:</div>
+        <StyledAudio controls="controls" src="media/birds.mp3">
+          Your browser does not support the HTML5 Audio element.
+        </StyledAudio>
       </Production>
     </>
   )
@@ -87,8 +90,6 @@ const StyledLeft = styled.div`
     font-size: 2vw;
     border-color: transparent;
     text-align: center;
-    span {
-    }
   }
 `;
 
@@ -116,10 +117,11 @@ const StyledAudio = styled.audio`
     border-radius: 0;
     background-color: grey;
   } */
-  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+  /* filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%); */
 `;
 
 const Production = styled(Composition)`
   /* visibility: ${ props => props.button2 ? 'visible' : 'hidden' }; */
   /* transition: opacity 1s; */
+  opacity: ${ props => props.button2 ? 1 : 0 };
 `;
