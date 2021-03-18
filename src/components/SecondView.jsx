@@ -47,6 +47,9 @@ const SecondViewDiv = styled.div`
     /* display: flex;
     align-items: center;
     justify-content: flex-end; */
+    /* transform: translateZ(-1px); */
+    /* transform: translateZ(-1px)  scale(2); */
+
 `;
 
 const StyledImage = styled.img`
@@ -86,7 +89,8 @@ const StyledDiv = styled.div`
         line-height: 3vw;
         /* margin-top: 50%; */
         position: relative;
-        overflow-x: scroll;
+        /* overflow-x: scroll; */
+        overflow-x: auto;
         .summary {
             font-size: 1.5rem;
         }

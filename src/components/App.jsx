@@ -34,7 +34,7 @@ const listenStyling = {
 function App() {
   return (
     <Router>
-      <div className="App">
+      <AppContainer>
         {/* <Header /> */}
         <StyledNav>
           <StyledLogo>THOMAS M.L. RAVAGO</StyledLogo>
@@ -81,10 +81,14 @@ function App() {
               </ScrollContainer>
             </Route>
           </Switch>
-      </div>
+      </AppContainer>
     </Router>
   );
 }
+
+const AppContainer = styled.div`
+  overflow-x: hidden;
+`;
 
 const ScrollContainer = styled.div`
   scroll-snap-type: y mandatory;
