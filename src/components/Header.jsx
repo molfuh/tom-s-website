@@ -59,9 +59,6 @@ const LinksContainer = styled.span`
 
     }
     .listen {
-      /* :hover {
-          color: red;
-      } */
     }
 `;
 

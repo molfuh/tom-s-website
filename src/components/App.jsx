@@ -4,6 +4,7 @@ import coverPic from '../cover_photo.JPG';
 import firstPic from '../first_photo.JPG';
 import facePic from '../thomas_smiling_pic.jpeg';
 import eric_genaff from '../eric_genaff.png';
+import music from '../sheet_music.jpeg';
 // import thomas_headshot from '../thomas_headshot.jpeg';
 import tom_s_logo from '../tom-s-logo.jpg';
 import Header from './Header';
@@ -69,7 +70,7 @@ function App() {
               <Videos eric_genaff={eric_genaff}/>
             </Route>
             <Route path="/listen">
-              <Listen />
+              <Listen music={music}/>
             </Route>
             <Route path="/">
               <ScrollContainer>
