@@ -40,13 +40,15 @@ const StyledImage = styled.img`
   display: block;
   width: 55%;
   margin: 0 auto;
+  overflow: none;
 `;
 
 const Styledh1 = styled.h1`
   position: absolute;
   color: white;
+  text-shadow: 2px 2px black;
   font-size: 6em;
-  top: 20vw;
+  top: 25vw;
   left: 25vw;
 `;
 
@@ -54,4 +56,5 @@ const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 25px;
 `;

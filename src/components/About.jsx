@@ -88,7 +88,8 @@ const Styledh1 = styled.h1`
   position: absolute;
   color: white;
   font-size: 6em;
-  top: 15vw;
+  text-shadow: 2px 2px black;
+  top: 25vw;
   left: 25vw;
 `;
 

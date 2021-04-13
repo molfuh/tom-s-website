@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
+import ReactAudioPlayer from 'react-audio-player';
+import music from '../sheet_music.jpeg';
+import production from '../music_production.JPG';
+import { TextFocus } from 'react-text-effects';
 
-export default function Listen() {
+export default function Listen({ music }) {
   const [button1, clickButton1] = useState(false)
   const [button2, clickButton2] = useState(false)
   return (
@@ -17,20 +21,53 @@ export default function Listen() {
           <StyledLeft>
             <Tilt className="Tilt" options={{ max : 25 }} >
               <>
-              <button onClick={() => { clickButton1(!button1) }}>Music Composition</button>
+              <button music={music} onClick={() => {
+                clickButton1(!button1)
+                if (button2) clickButton2(!button2)
+              }}>
+              <TextFocus type='in' duration='1s'>
+                <span>Music Composition</span>
+              </TextFocus>
+                </button>
               </>
             </Tilt>
           </StyledLeft>
           <StyledRight>
           <Tilt className="Tilt" options={{ max : 25 }} >
-              <button onClick={() => { clickButton2(!button2) }}>Music Production</button>
+              <button production={production} onClick={() => {
+                clickButton2(!button2);
+                if (button1) clickButton1(!button1)
+              }}>
+              <TextFocus type='in' duration='2s'>
+                <span>Music Production</span>
+              </TextFocus>
+                </button>
             </Tilt>
           </StyledRight>
         </div>
       </Container>
-      <Composition button1={button1}>Composition Works:
-      <div>Recording 1</div></Composition>
-      <Production button2={button2}>Production Works:</Production>
+      <Recordings>
+        <Composition button1={button1}>
+          <div>Composition Works:</div>
+          <StyledAudio controls="controls" src="media/birds.mp3">
+            Your browser does not support the HTML5 Audio element.
+          </StyledAudio>
+          {/* <ReactAudioPlayer
+            src="my_audio_file.ogg"
+            autoPlay
+            controls
+          > */}
+            {/* Your browser does not support the HTML5 Audio element. */}
+        {/* </ReactAudioPlayer> */}
+        </Composition>
+        <Production button2={button2}>
+          <div>Production Works:</div>
+          <StyledAudio controls="controls" src="media/birds.mp3">
+            Your browser does not support the HTML5 Audio element.
+          </StyledAudio>
+        </Production>
+      </Recordings>
+      <Footer />
     </>
   )
 }
@@ -51,24 +88,47 @@ const Container = styled.div`
 
 const StyledLeft = styled.div`
   grid-column-start: 1;
-  margin: 10vw;
+  margin: 5vw;
   button {
-    border-radius: 10px;
-    background-color: red;
+    color: black;
+    font-weight: bold;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    background-image: url(${music});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    /* position: absolute; */
+    border-radius: 25px;
+    /* background-color: red; */
+    /* opacity: 0.5; */
     padding: 20px;
-    height: 20vw;
-    width: 20vw;
+    height: 30vw;
+    width: 30vw;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 3.5vw;
     border-color: transparent;
+    text-align: center;
   }
 `;
 
 const StyledRight = styled(StyledLeft)`
   grid-column-start: 2;
   button {
-    background-color: yellow;
+    background-image: url(${production});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
   }
+`;
+
+{/* const BackgroundImage = styled.div`
+  background-image: url(${props => props.music})
+`; */}
+
+const Recordings = styled.div`
+  position: relative;
+  height: 120px;
 `;
 
 const Composition = styled.div`
@@ -83,8 +143,16 @@ const Composition = styled.div`
   font-size: 2rem;
 `;
 
+const StyledAudio = styled.audio`
+  /* &::-webkit-media-controls-enclosure {
+    border-radius: 0;
+    background-color: grey;
+  } */
+  /* filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%); */
+`;
+
 const Production = styled(Composition)`
-  opacity: ${ props => props.button2 ? 1 : 0 };
   /* visibility: ${ props => props.button2 ? 'visible' : 'hidden' }; */
   /* transition: opacity 1s; */
+  opacity: ${ props => props.button2 ? 1 : 0 };
 `;
