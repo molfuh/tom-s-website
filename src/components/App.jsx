@@ -30,7 +30,7 @@ function App() {
     <Router>
       <AppContainer>
         <StyledNav>
-          <StyledLogo>THOMAS M.L. RAVAGO</StyledLogo>
+          <StyledLogo href="/">THOMAS M.L. RAVAGO</StyledLogo>
             <ul>
               <StyledLi>
               <Link to="/listen"
@@ -101,17 +101,19 @@ const StyledNav = styled.nav`
   filter: drop-shadow(0 0 0.5rem grey);
 `;
 
-const StyledLogo = styled.span`
+const StyledLogo = styled.a`
   position: absolute;
   color: black;
   display: flex;
   align-items: center;
-  left: 5px;
-  font-size: 1.2vw;
+  left: 15px;
+  font-size: 1.5em;
+  text-decoration: none;
 `;
 
 const StyledLi = styled.li`
-  font-size: 1.2vw;
+  /* font-size: 1.2vw; */
+  font-size: 1.2em;
   display: inline;
   margin: 0;
   float: right;
